@@ -13,10 +13,6 @@ export default class App extends React.Component {
     }
   }
 
-  componentDidMount = () => {
-    this.drawPoint(0, 0);
-  }
-
   generateFillColor = () => {
     const fillColors = ['red', 'blue', 'teal', 'yellow', 'orange', 'green', 'white', 'grey', 'purple', 'maroon'];
     console.log(fillColors[Math.round(Math.random() * fillColors.length)]);
