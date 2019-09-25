@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import '../stylesheets/App.css';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -13,9 +13,9 @@ export default class App extends React.Component {
     }
   }
 
-  $"#canvas".click(function(e){
-    getPosition(e);
-  })
+  componentDidMount = () => {
+    let canvas = this.refs.canvas;
+  }
 
   drawPoint = (x, y) => {
     const pointSize = 3;
@@ -53,6 +53,7 @@ export default class App extends React.Component {
           <h1>Jubilant Octo-Engine</h1>
           <canvas
             id="canvas"
+            ref="canvas"
             width="750"
             height="500"
             style="cursor:crosshair;background:url(http://www.mundoanimalia.com/images/articles/66/58/06/7f6ffaa6bb0b408017b62254211691b5/gallina.jpg)"
