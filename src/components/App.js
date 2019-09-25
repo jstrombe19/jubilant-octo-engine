@@ -58,7 +58,7 @@ export default class App extends React.Component {
             ref="canvas"
             width="750"
             height="500"
-            onClick={this.drawPoint}
+            onClick={this.getPosition}
           >
           </canvas>
         </header>
