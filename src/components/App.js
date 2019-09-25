@@ -17,11 +17,17 @@ export default class App extends React.Component {
     this.drawPoint(0, 0);
   }
 
+  generateFillColor = () => {
+    const fillColors = ['red', 'blue', 'teal', 'yellow', 'orange', 'green', 'white', 'grey', 'purple', 'maroon'];
+    console.log(fillColors[Math.round(Math.random() * fillColors.length)]);
+    return fillColors[Math.round(Math.random() * fillColors.length)];
+  }
+
   drawPoint = (x, y) => {
-    const pointSize = 3;
+    const pointSize = Math.random() * 10;
     let canvas = this.refs.canvas;
     let ctx = document.getElementById("canvas").getContext("2d");
-    ctx.fillStyle = "ff2626"; //Red Color
+    ctx.fillStyle = this.generateFillColor() //Red Color
     ctx.beginPath(); //Start Path
     ctx.arc(x, y, pointSize, 0, Math.PI * 2, true); //Draw a point with the arc function of the canvas with a point structure.
     ctx.fill(); //Close the path and fill.
