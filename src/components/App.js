@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import '../stylesheets/App.css';
 
 export default class App extends React.Component {
@@ -14,11 +14,12 @@ export default class App extends React.Component {
   }
 
   componentDidMount = () => {
-    let canvas = this.refs.canvas;
+    this.drawPoint(0, 0);
   }
 
   drawPoint = (x, y) => {
     const pointSize = 3;
+    let canvas = this.refs.canvas;
     let ctx = document.getElementById("canvas").getContext("2d");
     ctx.fillStyle = "ff2626"; //Red Color
     ctx.beginPath(); //Start Path
@@ -27,6 +28,7 @@ export default class App extends React.Component {
   }
 
   getPosition = (event) => {
+    const canvas = document.getElementById("canvas");
     let rect = canvas.getBoundingClientRect();
     let x = event.clientX - rect.left; // x == the location of the click in the document
     let y = event.clientY - rect.left; // y == the location of the click in the document
@@ -56,7 +58,7 @@ export default class App extends React.Component {
             ref="canvas"
             width="750"
             height="500"
-            style="cursor:crosshair;background:url(http://www.mundoanimalia.com/images/articles/66/58/06/7f6ffaa6bb0b408017b62254211691b5/gallina.jpg)"
+            onClick={this.drawPoint}
           >
           </canvas>
         </header>

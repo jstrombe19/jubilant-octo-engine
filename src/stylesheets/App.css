@@ -20,3 +20,8 @@
 .App-link {
   color: #09d3ac;
 }
+
+.canvas {
+  cursor: crosshair;
+  background: url("http://www.mundoanimalia.com/images/articles/66/58/06/7f6ffaa6bb0b408017b62254211691b5/gallina.jpg")
+}
