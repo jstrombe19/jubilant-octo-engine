@@ -37,6 +37,8 @@ export default class App extends React.Component {
 
     this.drawPoint(x, y);
   }
+
+  const zReferenceRange = [];
   // <img src={logo} className="App-logo" alt="logo" />
   // <p>
   //   Edit <code>src/App.js</code> and save to reload.
